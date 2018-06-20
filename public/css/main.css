@@ -1,0 +1,217 @@
+ * { box-sizing:border-box; }
+/* 
+blue - #2862b7
+green - #00c57f
+*/
+html {
+    height:100%;
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Helvetica Neue','Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', sans-serif; 
+}
+header {
+    height:60px;
+    max-width: 1180px;
+    /* padding: 20px 0 0 20px; */
+    font-weight: normal;
+    margin:0 auto;
+    text-align: center;
+}
+header a,header a:hover, header a:visited{
+    color:white;
+    text-decoration: none;
+    font-weight: normal;
+}
+header a:hover{
+    text-decoration: underline;
+}
+.logo {
+    font-size: 16px;
+    color:white;
+    float:left;
+    padding:20px 10px;
+}
+.menu {
+    width:50%;
+    float:right;
+    padding: 20px 10px;
+}
+.menu ul {
+    float:right;
+    padding:0;
+    margin:0;
+}
+.menu li {
+    float:left;
+    list-style-type: none;
+    padding-left:5px;
+}
+/* main {
+    width:100%;
+    height: 100%;
+} */
+body {
+ color:white;
+ 
+}
+body::after {
+    content: "";
+    background:  #2862b7;
+    background:linear-gradient(180deg,#0f62bd 24%,#0a407a 168%);
+    background-size:cover;
+    /*opacity: 0.3;*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+.mainBox {
+    padding:20px;
+    margin: 0 auto;
+    max-width: 1180px;
+}
+.mainInnerBox {
+    padding-top:40px;
+    margin: 0 auto;
+    width:480px;
+    text-align: center;
+}
+.mainInnerBox.noTop{
+    padding-top:0px;
+}
+.mainInnerBoxHeader {
+    font-weight: normal;
+    font-size: 36px;
+    margin: 0 auto;
+    text-align: center;
+    margin:.67em 0;
+}
+.mainInnerBoxSubtitle {
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 300;
+}
+#frmQuickStart {
+    width:90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin:0 auto;
+    border: none;
+    text-align:center;
+}
+fieldset input,fieldset button,fieldset a {
+    border: solid 1px #dcdcdc;
+    height:auto;
+    width:100%;
+    padding:15px;
+    display: block;
+    text-align: left;
+    margin: 0 auto;
+    border-radius: 3px;
+    background: #fcfcfc;
+    margin: 10px auto 10px ;
+    transition: opacity 0.4s;
+}
+fieldset a {
+    text-decoration: none;
+}
+.lnkBack {
+    color:#DA5B59;
+}
+.btnStandard {
+    background: #00c57f;
+    border-color: #00c57f;
+    border-radius: 4px;
+    color:white;
+    text-align: center;
+}
+/* Register */
+#frmSignUp {
+    background: white;
+    padding:10px;
+}
+.divFirstName,.divLastName {
+    width:48%;
+    float:left;
+}
+.divSpacer {
+    float:left;
+    width:4%;
+}
+
+.btnRegister {
+    margin-top:15px;
+}
+/* Register */
+
+.errorDesc,.liError {
+    margin: 5px 0;
+    padding: 15px 5px;
+    border-radius: 4px;
+    color: #DA5B59;
+    background-color: #f2dede;
+    font-size:16px;
+}
+
+.footer {
+    color:#000;
+    position: fixed;
+    left:0;
+    bottom:10px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+   
+}
+/* ipad pro portrait */
+@media only screen and (max-width: 1024px) and ( orientation: portrait) { 
+  
+}
+/* ipad portrait */
+@media only screen and (max-width: 768px) and ( orientation: portrait) { 
+    
+}
+/* ipad landscape */
+@media only screen and (max-height: 768px) and ( orientation: landscape) { 
+    
+
+}
+/*iPhone 6/7/8 and Samsung S5 */
+@media only screen and (max-width: 640px) {
+    .mainInnerBox {
+        width:100%;
+    }
+    #frmQuickStart {
+        width:100%;
+    }
+}
+@media only screen and (max-width: 667px) and (orientation: landscape) {
+  
+}
+/*iPhone 5 and smaller format devices*/
+@media only screen and (max-width: 568px) and ( orientation: portrait) {
+    .mainBox {
+        padding:0px;
+    }
+}
+/*phone landscape*/
+@media only screen and (max-height: 420px) and ( orientation: landscape) {
+   
+}
+/*Navigation iPhone 5 and smaller format devices*/
+@media only screen and (max-width: 350px) and ( orientation: portrait) {
+    .lnkDashboard {
+        display:none;
+    }
+}
+
+
