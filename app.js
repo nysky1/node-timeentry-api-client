@@ -55,9 +55,9 @@ app.get('/activities', (req, res) => {
     }
   );
 });
-app.get('/activities/new', (req, res) => {
+app.get('/activity_new', (req, res) => {
   res.render(
-    'activities_new',
+    'activity_new',
     {
       title: 'VolunteerTrack - New Activity'
     }

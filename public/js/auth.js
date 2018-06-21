@@ -1,29 +1,34 @@
 'use strict';
+function parseJwt (token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+};
 
-let debugUser = {
-    firstName: 'Jim',
-    lastName: 'Test',
-    email: 'aa@aa' + generateRandomSuffix() + '.com',
-    username: 'aa@aa' + generateRandomSuffix() + '.com',
-    password: 'aa@aa' + generateRandomSuffix() + '.com'
-}
-let debugAcct = {
-    username: 'nysky2',
-    password: 'qwertyqwerty'
-}
-
-function generateRandomSuffix() {
-    return Math.floor(Math.random() * 5000);
-}
-
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
-    for (var i = 0; i < hashes.length; i++) {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
+function checkUser() {
+    const token = sessionStorage.getItem('token');
+    console.log('checking');
+    if(!token) {
+        location.href = '/';
+    } else {
+        $.ajax({
+            url: `${API_URL}/api/loginValidate`,
+            type: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            success: (response) => {
+                dWrite('Authorized');
+            },
+            error: () => {
+                dWrite('Unauthorized');
+                sessionStorage.removeItem('token');
+                location.href = '/';
+            }
+        })
     }
-    return vars;
 }
-//$(loadLoginSpotifyEventWatchers());
+
+$(() => {
+    checkUser();
+})

@@ -31,18 +31,19 @@
           <fieldset>
             <div class="errorDesc" hidden></div>
             <div class="divFirstName">
-              <input id="firstName" value="" placeholder="First Name" aria-label="Enter your First Name" class="text-input" />
+              <input id="firstName" value="" placeholder="First Name" aria-label="Enter your First Name" class="text-input" required />
             </div>
             <div class="divSpacer">&nbsp;</div>
             <div class="divLastName">
-              <input id="lastName" value="" placeholder="Last Name" aria-label="Enter your Last Name" class="text-input" />
+              <input id="lastName" value="" placeholder="Last Name" aria-label="Enter your Last Name" class="text-input" required />
             </div>
-            <input id="email" value="" placeholder="Email Address" aria-label="Enter your Email Address" class="text-input" />
-            <input id="username" value="" placeholder="Username" aria-label="Enter a Username" class="text-input" />
-            <input id="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" />
+            <input id="email" value="" placeholder="Email Address" aria-label="Enter your Email Address" class="text-input" required />
+            <input id="username" value="" placeholder="Username" aria-label="Enter a Username" class="text-input" required />
+            <input id="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" required />
             <button class="btnRegister btnStandard">Register</button>
           </fieldset>
         </form>
+        <div class="lnkAlreadyRegistered"><a href="/login" aria-label="Click to sign in">Already have an account?</a></div>
       </div>
     </div>
 
@@ -51,8 +52,8 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>
-  <script type="text/javascript" src="js/auth.js"></script>
-  <script type="text/javascript" src="js/index.js?v=1"></script>
+  <script type="text/javascript" src="js/common.js?v=1"></script>
+  <script type="text/javascript" src="js/register.js?v=1"></script>
 </body>
 
 </html>

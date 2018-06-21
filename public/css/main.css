@@ -118,8 +118,13 @@ fieldset input,fieldset button,fieldset a {
     margin: 10px auto 10px ;
     transition: opacity 0.4s;
 }
-fieldset a {
+a, a:visited {
     text-decoration: none;
+    color:white;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: underline;
 }
 .lnkBack {
     color:#DA5B59;
@@ -131,7 +136,7 @@ fieldset a {
     color:white;
     text-align: center;
 }
-/* Register */
+/* BEGIN Register */
 #frmSignUp {
     background: white;
     padding:10px;
@@ -144,11 +149,13 @@ fieldset a {
     float:left;
     width:4%;
 }
-
 .btnRegister {
     margin-top:15px;
 }
-/* Register */
+.lnkAlreadyRegistered {
+    margin-top:15px;
+}
+/* END Register */
 
 .errorDesc,.liError {
     margin: 5px 0;
