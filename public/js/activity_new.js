@@ -10,7 +10,7 @@ function addActivity(activity) {
     activityDate: activity.activityDate,
     activityDuration: activity.activityDuration
   };
-  showLoader();
+  //showLoader();
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
