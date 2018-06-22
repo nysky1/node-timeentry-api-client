@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="VolunteerTrack helps communities in tracking their volunteer's activities.">
   <meta name="keywords" content="track volunteer hours, tracking volunteers, volunteer time management">
-  <title>VolunteerTrack - Login</title>
+  <title>VolunteerTrack - Edit Activity</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -16,17 +16,17 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body id="userActivityNew">
   <header role="banner">
     <div class="logo">
       VolunteerTrack
     </div>
     <div class="menu">
       <ul>
+        <li class="lnkDashboard">
+          <a href="/dashboard">Dashboard</a> | </li>
         <li>
-          <a href="/login">Login</a> | </li>
-        <li>
-          <a href="/register">Sign Up</a>
+          <a href="/logout" class="lnkLogout">Logout</a>
         </li>
       </ul>
     </div>
@@ -34,26 +34,33 @@
   <main role="main">
     <div class="mainBox">
       <div class="mainInnerBox noTop">
-        <h1 class="mainInnerBoxHeader">Login</h1>
-        <form id="frmLogin">
+        <h1 class="mainInnerBoxHeader">Modify an Activity</h1>
+        <form id="frmEditActivity">
           <fieldset>
             <div class="errorDesc" hidden></div>
-
-            <input id="username" value="" placeholder="Username" aria-label="Enter a Username" class="text-input" />
-            <input id="password" type="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" />
-            <button class="btnLogin btnStandard">Login</button>
+           
+            <textarea  id="activity" value="" placeholder="Activity Description" aria-label="Enter an Activity" class="text-input" required
+            ></textarea>
+            <input id="activityDate" type="date" value="" placeholder="Activity Date" aria-label="Enter an Activity Date" class="text-input" required />
+            <input id="activityDuration" type="number" value="" placeholder="Hours of Activity" aria-label="Enter the activity duration in hours" class="text-input" required />
+            <button class="btnSave btnStandard">Save</button>
           </fieldset>
         </form>
-        <div class="lnkBack"><a href="/register" aria-label="Click to register">Need an account?</a></div>
+        <div class="lnkBack">
+          <a href="/activities" aria-label="Cancel this edit">Cancel this edit</a> | 
+          <a href="#" aria-label="Delete this activity" class="lnkDelete">Delete this item</a>
+        </div>
       </div>
     </div>
+
   </main>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
-  <script type="text/javascript" src="js/login.js?v=1"></script>
+  <script type="text/javascript" src="js/auth.js"></script>
+  <script type="text/javascript" src="js/activity_edit.js?v=1"></script>
 </body>
 
 </html>

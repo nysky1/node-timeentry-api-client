@@ -9,7 +9,7 @@ function getBearerToken() {
     dWrite(expirDate);
     localStorage.setItem(CONST_ACCESS_TOKEN_KEY_EXPIRATION, expirDate);
 
-    console.log(localStorage.access_token);
+    dWrite(localStorage.access_token);
     window.location.href = '/';
 }
 function getUrlVars() {

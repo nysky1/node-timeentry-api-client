@@ -1,6 +1,7 @@
  * { box-sizing:border-box; }
 /* 
 blue - #2862b7
+lt blue - #2b71b1
 green - #00c57f
 */
 html {
@@ -53,25 +54,24 @@ header a:hover{
 } */
 body {
  color:white;
- 
+ background:  #2862b7;
+ background:linear-gradient(180deg,#0f62bd 24%,#0a407a 168%);
+}
+body.solidBackground {
+    background:  #2862b7 !important
 }
 body::after {
     content: "";
-    background:  #2862b7;
-    background:linear-gradient(180deg,#0f62bd 24%,#0a407a 168%);
-    background-size:cover;
-    /*opacity: 0.3;*/
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;   
   }
 .mainBox {
     padding:20px;
     margin: 0 auto;
     max-width: 1180px;
+}
+.mainBox.backgroundInverse {
+    color:#2862b7;
+    background:  #fff;  
+    max-width: 700px;
 }
 .mainInnerBox {
     padding-top:40px;
@@ -105,7 +105,7 @@ fieldset {
     border: none;
     text-align:center;
 }
-fieldset input,fieldset button,fieldset a {
+fieldset input,fieldset textarea,fieldset button,fieldset a {
     border: solid 1px #dcdcdc;
     height:auto;
     width:100%;
@@ -118,6 +118,7 @@ fieldset input,fieldset button,fieldset a {
     margin: 10px auto 10px ;
     transition: opacity 0.4s;
 }
+
 a, a:visited {
     text-decoration: none;
     color:white;
@@ -126,7 +127,7 @@ a, a:visited {
 a:hover {
     text-decoration: underline;
 }
-.lnkBack {
+.lnkDelete {
     color:#DA5B59;
 }
 .btnStandard {
@@ -137,10 +138,8 @@ a:hover {
     text-align: center;
 }
 /* BEGIN Register */
-#frmSignUp {
-    background: white;
-    padding:10px;
-}
+
+/* BEGIN - NAME SPACING */
 .divFirstName,.divLastName {
     width:48%;
     float:left;
@@ -149,13 +148,73 @@ a:hover {
     float:left;
     width:4%;
 }
+/*END - NAME SPACING */
+
+#frmSignUp {
+    background: white;
+    padding:10px;
+}
 .btnRegister {
     margin-top:15px;
 }
-.lnkAlreadyRegistered {
+.lnkBack {
     margin-top:15px;
 }
 /* END Register */
+
+/* BEGIN - List View   */
+.js-results a {
+    text-decoration: none;
+    color: #2862b7;
+}
+.js-panel-list-wrapper {
+    clear:left;
+    display:block;
+    width:100%;
+    min-height: 50px;
+    text-align: left;
+    border-bottom:solid 1px #dcdcdc;
+    padding:15px 10px;
+}
+.js-panel-list-wrapper:hover {
+    background: #2862b7;
+    color:white;
+    cursor: pointer;
+}
+
+.eventDate,.eventHours {
+    float:left;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-weight: bold;
+}
+.eventName {
+    display:block;
+    clear:left;
+}
+.eventNameSpacer {
+    width:20px;
+    float:left;
+}
+.editButton {
+    float:right;
+    position: relative;
+    right: 0;
+    top:15px;
+    display:none;
+}
+.js-panel-list-wrapper:hover .editButton {
+    display:block;
+}
+/* END   - List View */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 
 .errorDesc,.liError {
     margin: 5px 0;
@@ -177,7 +236,12 @@ a:hover {
 }
 /* DESKTOP */
 @media only screen and (min-width: 768px) {
-   
+   .mainInnerBox {
+       width: 480px;
+   }
+   #userActivities .mainInnerBox {
+       width: 660px;
+   }
 }
 /* ipad pro portrait */
 @media only screen and (max-width: 1024px) and ( orientation: portrait) { 
@@ -208,6 +272,12 @@ a:hover {
 @media only screen and (max-width: 568px) and ( orientation: portrait) {
     .mainBox {
         padding:0px;
+    }
+    .js-results {
+        padding:10px;
+    }
+    .js-panel-list-wrapper:hover .editButton {
+        display:none;
     }
 }
 /*phone landscape*/

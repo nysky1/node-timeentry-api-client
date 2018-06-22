@@ -1,14 +1,50 @@
 'use strict';
-function parseJwt (token) {
+function authorizeAndLoadEventWatchers() {
+    handleLogout();
+    checkUser();
+}
+function handleLogout() {
+    $('.lnkLogout').click( (event) => {
+        event.preventDefault();
+        sessionStorage.removeItem('token');
+        location.href = '/';
+    })
+}
+function parseJwt(token) {
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace('-', '+').replace('_', '/');
     return JSON.parse(window.atob(base64));
 };
+function getUser() {
+    const token = sessionStorage.getItem('token');
+    dWrite('Getting user...');
+    if (!token) {
+        location.href = '/';
+    } else {
+        return $.ajax({
+            url: `${API_URL}/api/loginValidate`,
+            type: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            success: (response) => {
+                dWrite('Returned user');
+                const payloadData = parseJwt(token);
+                return payloadData._id;
+            },
+            error: () => {
+                dWrite('Unauthorized (N)');
+                sessionStorage.removeItem('token');
+                location.href = '/';
+            }
+        })
+    }
+}
 
 function checkUser() {
     const token = sessionStorage.getItem('token');
-    console.log('checking');
-    if(!token) {
+    dWrite('Checking Authorization...');
+    if (!token) {
         location.href = '/';
     } else {
         $.ajax({
@@ -18,10 +54,10 @@ function checkUser() {
                 Authorization: `Bearer ${token}`,
             },
             success: (response) => {
-                dWrite('Authorized');
+                dWrite('Authorized (Y)');
             },
             error: () => {
-                dWrite('Unauthorized');
+                dWrite('Unauthorized (N)');
                 sessionStorage.removeItem('token');
                 location.href = '/';
             }
@@ -29,6 +65,4 @@ function checkUser() {
     }
 }
 
-$(() => {
-    checkUser();
-})
+$(authorizeAndLoadEventWatchers());

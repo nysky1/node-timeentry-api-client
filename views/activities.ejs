@@ -16,7 +16,7 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
-<body id="userActivities">
+<body id="userActivities" class="solidBackground">
   <header role="banner">
     <div class="logo">
       VolunteerTrack
@@ -26,17 +26,19 @@
         <li class="lnkDashboard">
           <a href="/dashboard">Dashboard</a> | </li>
         <li>
-          <a href="/logout">Logout</a>
+          <a href="/logout" class="lnkLogout">Logout</a>
         </li>
       </ul>
     </div>
   </header>
   <main role="main">
-    <div class="mainBox">
+      <h1 class="mainInnerBoxHeader">Activity Log</h1>
+        
+    <div class="mainBox backgroundInverse">
+        
       <div class="mainInnerBox noTop">
-        <h1 class="mainInnerBoxHeader">Activities</h1>
-        <div class="results">
-          actitives go here...
+        
+        <div class="js-results">No activities yet...
         </div>
         </form>
       </div>
@@ -47,8 +49,9 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/auth.js"></script>
-  <script type="text/javascript" src="js/index.js?v=1"></script>
+  <script type="text/javascript" src="js/activities.js?v=1"></script>
 </body>
 
 </html>

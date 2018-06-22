@@ -63,6 +63,14 @@ app.get('/activity_new', (req, res) => {
     }
   );
 });
+app.get('/activity_edit', (req, res) => {
+  res.render(
+    'activity_edit',
+    {
+      title: 'VolunteerTrack - Edit Activity'
+    }
+  );
+});
 
 app.listen(port,'0.0.0.0', () => {
   debug(`listening on port ${chalk.green(port)}`);

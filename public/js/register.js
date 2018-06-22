@@ -23,11 +23,16 @@ function registerUser(user) {
 
 /* END - API METHODS */
 function handleRegisterPreload() {
-  if ($('#frmSignUp').length > 0) {
     let hashes = getUrlVars();
     $('#frmSignUp #email').val(hashes["email"]);
     $('#frmSignUp #firstName').focus();
-  }
+  
+    if (isDebug) {
+      $('#frmSignUp input').each( (index,item) => {
+        $(item).removeAttr('required');
+      })
+    }
+    
 }
 function handleRegister() {
   $('#frmSignUp').submit(function () {
@@ -47,7 +52,7 @@ function handleRegister() {
         window.location.href = '/login#msg=Profile created, now you can login.'
       })
       .fail(function (result) {
-        writeError(1, result);
+        writeFlash(1, result);
         dWrite(result.statusText);
       });
 
