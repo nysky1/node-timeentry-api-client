@@ -1,8 +1,7 @@
 <h1>Volunteer Track</h1>
 
-"VolunteerTrack" is designed to simplify tracking volunteer hours for institutions.  Many schools mandate that parents volunteer for a required number of hours per year. Many schools are still doing this tracking on paper or within the Office suite.  VolunteerTrack moves the management of these hours to a web based service and provides an administrator with the ability to verify and confirm activity hours.
+"VolunteerTrack" is designed to simplify tracking volunteer hours for institutions.  Many schools mandate that parents volunteer for a required number of hours per year. Parents and staff are still doing this tracking on paper or within the Office suite.  VolunteerTrack moves the management of these vital hours to a web-based service and provides an administrator with the ability to verify and confirm activity hours.
 
-A Spotify login is recommended so that when you choose an event, we can show a Spotify embedded music player allowing you to preview the selected HOT band.
 <comment>
     <h3>LIVE SITE (see demo credentials below)</h3>
     <h5><b>Spotify Demo Account:</b> spotifytestuser99@gmail.com - <b>Spotify Demo Password:</b> MuzicRules99</h5>

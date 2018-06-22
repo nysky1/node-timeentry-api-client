@@ -31,6 +31,15 @@ function getUrlVars() {
     }
     return vars;
 }
+/* LOADER */
+function showLoader() {
+$('body').removeClass('loaded');
+}
+function hideLoader() {
+    $('body').addClass('loaded');
+}
+/* LOADER */
+
 /* ERROR LOGGER/CLEAR */
 function checkAPI(result) {
     let isAPILiveUp = result === undefined;

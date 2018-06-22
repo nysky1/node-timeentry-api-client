@@ -16,7 +16,7 @@ function fillForm(activities, activityId) {
   $('#activityDuration').val(activity.activityDuration);
 }
 function loadActivity(activityId) {
-
+  showLoader();
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
@@ -34,11 +34,13 @@ function loadActivity(activityId) {
         dWrite('Loaded user');
       })
       .fail(function (result) {
+        hideLoader();
         writeFlash(1, `Oops, looking up user failed - ${result.statusText} (${result.status})!`);
         dWrite(result.statusText);
       });
     })
     .fail(function (result) {
+      hideLoader();
       writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
@@ -46,6 +48,7 @@ function loadActivity(activityId) {
 }
 function saveActivity(revisedActivity,activityId) {
   let request = revisedActivity;
+  showLoader();
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
@@ -65,17 +68,20 @@ function saveActivity(revisedActivity,activityId) {
         dWrite('Saved activity');
       })
       .fail(function (result) {
+        hideLoader();
         writeFlash(1, `Oops, saving the user's activity failed - ${result.statusText} (${result.status})!`);
         dWrite(result.statusText);
       });
     })
     .fail(function (result) {
+      hideLoader();
       writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
 
 }
 function removeActivity(activityId) {
+  showLoader();
   $.when(getUser())
   .done(function (user) {
     const token = sessionStorage.getItem('token');
@@ -93,11 +99,13 @@ function removeActivity(activityId) {
       dWrite('Deleted activity');
     })
     .fail(function (result) {
+      hideLoader();
       writeFlash(1, `Oops, deleting the user's activity failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
   })
   .fail(function (result) {
+    hideLoader();
     writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
     dWrite(result.statusText);
   });

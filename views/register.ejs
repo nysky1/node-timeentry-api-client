@@ -37,18 +37,26 @@
             <div class="divLastName">
               <input id="lastName" value="" placeholder="Last Name" aria-label="Enter your Last Name" class="text-input" required />
             </div>
-            <input id="email" value="" placeholder="Email Address" aria-label="Enter your Email Address" class="text-input" required />
+            <input id="email" value="" placeholder="Email Address" aria-label="Enter your Email Address" class="text-input" required
+            />
             <input id="username" value="" placeholder="Username" aria-label="Enter a Username" class="text-input" required />
             <input id="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" required />
             <button class="btnRegister btnStandard">Register</button>
           </fieldset>
         </form>
-        <div class="lnkBack"><a href="/login" aria-label="Click to sign in">Already have an account?</a></div>
+        <div class="lnkBack">
+          <a href="/login" aria-label="Click to sign in">Already have an account?</a>
+        </div>
       </div>
     </div>
 
   </main>
-
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section">
+      <img src="/images/ajax-loader.gif">
+    </div>
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>

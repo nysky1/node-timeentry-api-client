@@ -16,7 +16,7 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body class='loaded'>
   <header role="banner">
     <div class="logo">
       VolunteerTrack
@@ -44,11 +44,18 @@
             <button class="btnLogin btnStandard">Login</button>
           </fieldset>
         </form>
-        <div class="lnkBack"><a href="/register" aria-label="Click to register">Need an account?</a></div>
+        <div class="lnkBack">
+          <a href="/register" aria-label="Click to register">Need an account?</a>
+        </div>
       </div>
     </div>
   </main>
-
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section">
+      <img src="/images/ajax-loader.gif">
+    </div>
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>

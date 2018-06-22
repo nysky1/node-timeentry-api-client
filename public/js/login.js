@@ -24,6 +24,7 @@ function handleLogin() {
       username: $('#username').val(),
       password: $('#password').val()
     }
+    showLoader();
     $.when(
       loginUser(user)
     )
@@ -32,6 +33,7 @@ function handleLogin() {
         window.location.href = "/dashboard";
       })
       .fail(function (result) {
+        hideLoader();
         writeError(1, result);
         dWrite(result.statusText);
       });

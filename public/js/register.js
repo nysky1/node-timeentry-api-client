@@ -44,7 +44,7 @@ function handleRegister() {
       username: $('#username').val(),
       password: $('#password').val()
     }
-
+    showLoader();
     $.when(
       registerUser(newUser)
     )
@@ -52,6 +52,7 @@ function handleRegister() {
         window.location.href = '/login#msg=Profile created, now you can login.'
       })
       .fail(function (result) {
+        hideLoader();
         writeFlash(1, result);
         dWrite(result.statusText);
       });

@@ -10,7 +10,7 @@ function addActivity(activity) {
     activityDate: activity.activityDate,
     activityDuration: activity.activityDuration
   };
-
+  showLoader();
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
@@ -30,11 +30,13 @@ function addActivity(activity) {
         dWrite('Saved activity');
       })
       .fail(function (result) {
+        hideLoader();
         writeFlash(1, `Oops, adding the activity failed - ${result.statusText} (${result.status})!`);
         dWrite(result.statusText);
       });
     })
     .fail(function (result) {
+      hideLoader();
       writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
