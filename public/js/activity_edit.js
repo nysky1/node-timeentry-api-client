@@ -30,6 +30,7 @@ function loadActivity(activityId) {
         type: 'GET'
       })
       .done(function (result) {
+        hideLoader();
         fillForm(result.activities, activityId);
         dWrite('Loaded user');
       })
