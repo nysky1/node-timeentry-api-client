@@ -67,7 +67,7 @@ function handleNewActivityView() {
   });
   $('#frmNewActivity').submit(function () {
     event.preventDefault();
-    let newActivity = (isDebug) ? debugActivity : {
+    let newActivity = {
       activity: $('#activity').val(),
       activityDate: $('#activityDate').val(),
       activityDuration: $('#activityDuration').val(),

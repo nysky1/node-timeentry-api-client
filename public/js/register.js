@@ -37,7 +37,7 @@ function handleRegisterPreload() {
 function handleRegister() {
   $('#frmSignUp').submit(function () {
     event.preventDefault();
-    let newUser = (isDebug) ? debugUser : {
+    let newUser = {
       firstName: $('#firstName').val(),
       lastName: $('#lastName').val(),
       email: $('#email').val(),

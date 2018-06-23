@@ -133,7 +133,7 @@ function handleEditActivityView() {
   $('#frmEditActivity').submit(function () {
     event.preventDefault();
     
-    let revisedActivity = (isDebug) ? debugActivity : {
+    let revisedActivity = {
       activity: $('#activity').val(),
       activityDate: $('#activityDate').val(),
       activityDuration: $('#activityDuration').val(),

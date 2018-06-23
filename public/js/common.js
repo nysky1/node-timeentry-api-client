@@ -55,10 +55,21 @@ function writeError(loc, message) {
     }
     errorElement.html(errorMessage).prop('hidden', false);
 }
+function writeFlashConfirmation(loc, message) {
+    let msgElement = (loc === 1) ? $('.errorDesc') : $('.liError');
+    
+    msgElement.html(message).prop('hidden', false);
+}
 function writeFlash(loc, message) {
     let msgElement = (loc === 1) ? $('.errorDesc') : $('.liError');
 
-    msgElement.html(message).prop('hidden', false);
+    let isAPIUp = message.responseJSON !== undefined;
+    let errorMessage = (!isAPIUp) ? 'API is down, check your connection.' : `${message.responseJSON.generalMessage}`;
+    if (isAPIUp) {
+        errorMessage += (message.responseJSON.messages !== undefined) ? `. ${message.responseJSON.messages[0]}` : '';
+    }
+
+    msgElement.html(errorMessage).prop('hidden', false);
 }
 function clearError() {
     $('.liError').html('').prop('hidden', true);

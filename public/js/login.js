@@ -20,7 +20,7 @@ function loginUser(user) {
 function handleLogin() {
   $('#frmLogin').submit(function () {
     event.preventDefault();
-    let user = (isDebug) ? debugAcct : {
+    let user = {
       username: $('#username').val(),
       password: $('#password').val()
     }
@@ -43,7 +43,7 @@ function handleLogin() {
 function handleLoginPostRegistration() {
   if ($('#frmLogin').length > 0) {
     let hashes = getUrlVars();
-    if (hashes['msg'] !== undefined && hashes['msg'].length > 0) { writeFlash(1, decodeURIComponent(hashes["msg"])); }
+    if (hashes['msg'] !== undefined && hashes['msg'].length > 0) { writeFlashConfirmation(1, decodeURIComponent(hashes["msg"])); }
   }
 }
 /* END - Main Event Callback Functions */
