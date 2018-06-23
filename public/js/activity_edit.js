@@ -16,7 +16,7 @@ function fillForm(activities, activityId) {
   $('#activityDuration').val(activity.activityDuration);
 }
 function loadActivity(activityId) {
-  showLoader();
+  //showLoader();
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
@@ -30,18 +30,18 @@ function loadActivity(activityId) {
         type: 'GET'
       })
       .done(function (result) {
-        hideLoader();
+        //hideLoader();
         fillForm(result.activities, activityId);
         dWrite('Loaded user');
       })
       .fail(function (result) {
-        hideLoader();
+        //hideLoader();
         writeFlash(1, `Oops, looking up user failed - ${result.statusText} (${result.status})!`);
         dWrite(result.statusText);
       });
     })
     .fail(function (result) {
-      hideLoader();
+      //hideLoader();
       writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
