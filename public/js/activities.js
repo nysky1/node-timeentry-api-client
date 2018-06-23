@@ -20,6 +20,11 @@ function displayResults(activities) {
   let subHeaderHTML = '';
   let errorHTML = '<li class="liError" hidden aria-live="assertive"></li>'
   
+  if (activities.length == 0) {
+    $('.js-results').html('No activities found.  Add an activity!');
+    return;
+  }
+
   for (let i = 0; i < activities.length; i++) {
     resultsHTML += `<a href="/activity_edit#id=${activities[i]._id}"><li class='js-panel-list-wrapper' aria-activity='${activities[i].activity}' role="button" >
     <div class="editButton"><button class="btnSmall btnStandard">Modify</button></div>
