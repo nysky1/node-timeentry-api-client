@@ -137,6 +137,13 @@ a:hover {
     color:white;
     text-align: center;
 }
+.btnAdmin {
+    background: #fff;
+    border-color: #dcdcdc;
+    border-radius: 4px;
+    color:#2862b7 !important;
+    text-align: center;
+}
 /* BEGIN Register */
 
 /* BEGIN - NAME SPACING */
@@ -182,6 +189,7 @@ a:hover {
     cursor: pointer;
 }
 
+
 .eventDate,.eventHours {
     float:left;
     margin-top:5px;
@@ -206,6 +214,48 @@ a:hover {
 .js-panel-list-wrapper:hover .editButton {
     display:block;
 }
+/* ALL USERS VIEW */
+.js-panel-list-wrapper-all-users {
+    clear:left;
+    display:block;
+    width:100%;
+    min-height: 50px;
+    text-align: left;
+    border-bottom:solid 1px #dcdcdc;
+    padding:15px 10px;
+    margin-top:8px;
+}
+.js-panel-list-wrapper-all-users {
+    background: #2862b7;
+    color:white;
+    cursor: pointer;
+}
+.js-panel-item {
+    text-align: left;
+    padding: 10px 15px;
+    min-height: 50px;
+
+}
+
+/* .js-panel-item:hover {
+    text-align: left;
+    padding: 10px 15px;
+    background: #2862b7;
+    color:white;
+    cursor: pointer;
+}
+.js-panel-item .editButton {
+    float:right;
+    position: relative;
+    right: 0;
+    top:50%;
+    display:none;
+}
+.js-panel-item:hover .editButton {
+    display:block;
+} */
+/* ALL USERS VIEW */
+
 /* END   - List View */
 
 input::-webkit-outer-spin-button,

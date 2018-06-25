@@ -42,7 +42,7 @@ function displayResults(activities) {
 /* END - DISPLAY RESULTS */
 
 /* END - Main Event Callback Functions */
-function loadUserActivities() {
+function loadAllUserActivities() {
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
@@ -62,4 +62,4 @@ function loadUserActivities() {
     });
 }
 
-$(loadUserActivities());
+$(loadAllUserActivities());

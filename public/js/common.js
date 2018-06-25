@@ -20,7 +20,11 @@ function generateRandomSuffix() {
     return Math.floor(Math.random() * 5000);
 }
 /* END - DEBUG Helpers */
-
+function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+};
 function getUrlVars() {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');

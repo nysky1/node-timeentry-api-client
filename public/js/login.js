@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 /* BEGIN - API METHODS */
 function loginUser(user) {
@@ -17,6 +17,33 @@ function loginUser(user) {
   });
 }
 /* END - API METHODS */
+function handlePrelogin() {
+  showLoader();
+  const token = sessionStorage.getItem('token');
+    dWrite('Checking existing login...');
+    if (!token) {
+        dWrite('No token..."')
+        hideLoader();
+    } else {
+        return $.ajax({
+            url: `${API_URL}/api/loginValidate`,
+            type: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            success: (response) => {
+                dWrite('Returned user');
+                const payloadData = parseJwt(token);
+                window.location.href = '/dashboard';
+            },
+            error: () => {
+              hideLoader();
+                dWrite('Unauthorized (N)');
+            }
+        })
+    }
+}
+
 function handleLogin() {
   $('#frmLogin').submit(function () {
     event.preventDefault();
@@ -48,6 +75,7 @@ function handleLoginPostRegistration() {
 }
 /* END - Main Event Callback Functions */
 function loadEventWatchers() {
+  handlePrelogin();
   handleLogin();
   handleLoginPostRegistration();
 }

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="VolunteerTrack helps communities in tracking their volunteer's activities.">
   <meta name="keywords" content="track volunteer hours, tracking volunteers, volunteer time management">
-  <title>VolunteerTrack - Dashboard</title>
+  <title>VolunteerTrack - User Activities</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -16,32 +16,30 @@
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body id="userActivities" class="solidBackground">
   <header role="banner">
     <div class="logo">
       VolunteerTrack
     </div>
     <div class="menu">
       <ul>
+        <li class="lnkDashboard">
+          <a href="/dashboard">Dashboard</a> | </li>
         <li>
-          <a href="#" class="lnkLogout">Logout</a></li>
+          <a href="/logout" class="lnkLogout">Logout</a>
+        </li>
       </ul>
     </div>
   </header>
   <main role="main">
-    <div class="mainBox">
+      <h1 class="mainInnerBoxHeader">User Activity Log</h1>
+        
+    <div class="mainBox backgroundInverse">
+        
       <div class="mainInnerBox noTop">
-        <h1 class="mainInnerBoxHeader">Dashboard</h1>
-          <form id="frmDashboard">
-          <fieldset>
-              <a class="btnStandard viewActivities" href="/activities">View Your Activities</a>
-              <br>
-              <a class="btnStandard newActivity" href="/activity_new">Log an Activity</a>
-          </fieldset>
-          <fieldset class="fldAdmin" hidden>
-            <a class="btnStandard btnAdmin viewActivitiesAdmin" href="/all_activities">View All User Activities</a>
-            
-        </fieldset>
+        
+        <div class="js-results">Loading activities...
+        </div>
         </form>
       </div>
     </div>
@@ -53,7 +51,7 @@
   <script type="text/javascript" src="js/constants.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/auth.js"></script>
-  <script type="text/javascript" src="js/dashboard.js?v=1"></script>
+  <script type="text/javascript" src="js/all_activities.js?v=1"></script>
 </body>
 
 </html>
