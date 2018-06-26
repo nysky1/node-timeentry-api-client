@@ -127,6 +127,9 @@ a, a:visited {
 a:hover {
     text-decoration: underline;
 }
+a .fa {
+    padding-right:5px;
+}
 .lnkDelete {
     color:#DA5B59;
 }
@@ -234,6 +237,9 @@ a:hover {
     text-align: left;
     padding: 10px 15px;
     min-height: 50px;
+}
+.divHoursTotal {
+    float:right;
 
 }
 
@@ -293,6 +299,15 @@ input::-webkit-inner-spin-button {
     border-radius: 4px;
     color: #DA5B59;
     background-color: #f2dede;
+    font-size:16px;
+
+}
+.errorDesc.green {
+    margin: 5px 0;
+    padding: 15px 5px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #00c57f;
     font-size:16px;
 
 }

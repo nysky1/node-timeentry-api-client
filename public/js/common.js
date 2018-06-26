@@ -59,10 +59,12 @@ function writeError(loc, message) {
     }
     errorElement.html(errorMessage).prop('hidden', false);
 }
-function writeFlashConfirmation(loc, message) {
+function writeFlashConfirmation(loc, message, success) {
     let msgElement = (loc === 1) ? $('.errorDesc') : $('.liError');
-    
+
+    if (success) {msgElement.addClass('green');}
     msgElement.html(message).prop('hidden', false);
+    setTimeout(function() {msgElement.fadeOut();}, 2000);
 }
 function writeFlash(loc, message) {
     let msgElement = (loc === 1) ? $('.errorDesc') : $('.liError');

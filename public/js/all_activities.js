@@ -19,19 +19,19 @@ function displayResults(users) {
   let resultsHTML = '';
   let subHeaderHTML = '';
   let errorHTML = '<li class="liError" hidden aria-live="assertive"></li>'
-
+  const replaceHTML = '__TOTAL_HOURS__'
   if (users.length == 0) {
     $('.js-results').html('No users found!');
     return;
   }
 
   for (let i = 0; i < users.length; i++) {
-    
-      resultsHTML += `<li class='js-panel-list-wrapper-all-users'>${users[i].firstName} ${users[i].lastName}</li>`;
-      if (users[i].activities.length == 0) {
-        resultsHTML += `<p class='js-panel-item'>No activities</p>`
-      }
-      for (let j = 0; j < users[i].activities.length; j++) {       
+  let totalHours = 0; 
+    resultsHTML += `<li class='js-panel-list-wrapper-all-users'>${users[i].firstName} ${users[i].lastName}<div class="divHoursTotal">__TOTAL_HOURS__ Hour(s)</div></li>`;
+    if (users[i].activities.length == 0) {
+      resultsHTML += `<p class='js-panel-item'>No activities</p>`
+    }
+    for (let j = 0; j < users[i].activities.length; j++) {
       resultsHTML += `
       <div class='js-panel-item'>
       <div class='eventDate'>${users[i].activities[j].activityDate}</div>
@@ -39,9 +39,11 @@ function displayResults(users) {
       <div class="eventHours">${users[i].activities[j].activityDuration} hour(s)</div>
       <div class="eventName">${users[i].activities[j].activity}</div>
       </div>`
-      }
-      resultsHTML += '</li>'
-    
+      totalHours += +users[i].activities[j].activityDuration;
+    }
+    resultsHTML = resultsHTML.replace('__TOTAL_HOURS__',totalHours);
+    resultsHTML += '</li>'
+
   }
   $('.js-results').html(subHeaderHTML + errorHTML).append(resultsHTML).append('<div class="spacer"></div>');
 

@@ -4,9 +4,11 @@
 
 <comment>
     <h3>LIVE SITE (see demo credentials below)</h3>
-    <h5><b>Spotify Demo Account:</b> spotifytestuser99@gmail.com - <b>Spotify Demo Password:</b> MuzicRules99</h5>
-    <a target="_new" href="https://whatshot2nite.azurewebsites.net/">Go to the Live Site</a> 
+    <h5><b>Demo Account:</b> basicuser - <b>Demo Password:</b> Passw0rd</h5>
+    <h5><b>Admin Demo Account:</b> devtest - <b>Admin Demo Password:</b> Passw0rd</h5>
+    <a target="_new" href="https://pure-sea-54035.herokuapp.com/">Go to the Live Site</a> 
 
-    <img alt="Whats Hot Tonight Screenshot" src="https://whatshot2nite.azurewebsites.net/images/screen1.png?v2" />
-    <img alt="Whats Hot Tonight Screenshot" src="https://whatshot2nite.azurewebsites.net/images/screen2.png?v2" />
+    <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen1.png?v2" />
+    <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen2.png?v2" />
+    <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen3.png?v2" />
 </comment>

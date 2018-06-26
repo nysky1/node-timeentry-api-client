@@ -70,7 +70,7 @@ function handleLogin() {
 function handleLoginPostRegistration() {
   if ($('#frmLogin').length > 0) {
     let hashes = getUrlVars();
-    if (hashes['msg'] !== undefined && hashes['msg'].length > 0) { writeFlashConfirmation(1, decodeURIComponent(hashes["msg"])); }
+    if (hashes['msg'] !== undefined && hashes['msg'].length > 0) { writeFlashConfirmation(1, decodeURIComponent(hashes["msg"]),true); }
   }
 }
 /* END - Main Event Callback Functions */
