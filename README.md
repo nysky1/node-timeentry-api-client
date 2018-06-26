@@ -11,7 +11,3 @@
 <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen1.png?v2" />
 <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen2.png?v2" />
 <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen3.png?v2" />
-
-
-
-    

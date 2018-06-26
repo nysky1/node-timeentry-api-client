@@ -1,0 +1,9 @@
+language: node_js
+node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: kAsM3k0BlFAzJLhW4L0zzpTazrqjjYs1ZInEFuD3NXndmsPkGwqcErxYiG+WRlKWxbiMLRKYmnL0xYpeatk5nWC/beZhltRlTrm7PL6PXnVOGb5wdPnYW76VYchYzYEtt1GAwoS4PrPNK5PM9ufh1pJhP4o2pP+XUgx0quazFVmaC9FOBbzpa1y9QtBxtGB3ta9aOuER8+08Xpfz/l5wQjma5Osk/5l5cNCiHbQ/rlQWB70HvZP4MFfOI/v2jBOJJj/UxSyKEGHA+6a9iwy6sHahQcnVWWGXF4zFGsRY+FpTibxlCd2/xE169b8EqZtY/qQzPdr3Yhgg3bwfMb0Cf1r7wMwMSrOZjHY9/Qt7HwyDFQ9OQFQ5B4Bhz9lOfgq+PxTlWtxIPm50K11+X3vtaS0JDdOGB9HXgMoa3DnKY4zVozbmYe1tVGQuMEmfCGayIHPzdr9o/dffs/dlu1xqtokDjMaMADvnNO0PBKBLs8VeDSRrvoy9JjNqRaYMHs2+aQoMGYUAIxpMrkNbBSmy3LrMPvwiJD8x4VnXS3aiqVEUOCXZW+/g5IY+tpfIx2tIrgimiNgF4kE59zTo7w/yHT5plWrjEOJc7lUazd67Zzi5BSMvdZT+GP0K4DbNX1WqdfJioGXYp0t9Swwi7wvtw0O3lpVwmCzaIXzlD2qthYQ=
+  app: pure-sea-54035
+  on:
+    repo: nysky1/node-timeentry-api-client
