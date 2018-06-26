@@ -7,7 +7,7 @@
 <h5><b>Demo Account:</b> basicuser - <b>Demo Password:</b> Passw0rd</h5>
 <h5><b>Admin Demo Account:</b> devtest - <b>Admin Demo Password:</b> Passw0rd</h5>
 <a target="_new" href="https://pure-sea-54035.herokuapp.com/">Go to the Live Site</a> 
-
+ 
 <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen1.png?v2" />
 <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen2.png?v2" />
 <img alt="VolunteerTrak Screenshot" src="https://pure-sea-54035.herokuapp.com/images/screen3.png?v2" />
