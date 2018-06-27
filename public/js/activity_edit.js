@@ -16,7 +16,6 @@ function fillForm(activities, activityId) {
   $('#activityDuration').val(activity.activityDuration);
 }
 function loadActivity(activityId) {
-  //showLoader();
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
@@ -30,18 +29,15 @@ function loadActivity(activityId) {
         type: 'GET'
       })
       .done(function (result) {
-        //hideLoader();
         fillForm(result.activities, activityId);
         dWrite('Loaded user');
       })
       .fail(function (result) {
-        //hideLoader();
         writeFlash(1, `Oops, looking up user failed - ${result.statusText} (${result.status})!`);
         dWrite(result.statusText);
       });
     })
     .fail(function (result) {
-      //hideLoader();
       writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
@@ -56,7 +52,7 @@ function saveActivity(revisedActivity,activityId) {
       request.id = user._id;
       request.eventId = activityId;
       return $.ajax({
-        url: `${API_URL}/api/users/${user._id}/activities/${activityId}`,
+        url: `${API_URL}/api/users/${user._id}/activity/${activityId}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -88,7 +84,7 @@ function removeActivity(activityId) {
     const token = sessionStorage.getItem('token');
 
     return $.ajax({
-      url: `${API_URL}/api/users/${user._id}/removeActivity/${activityId}`,
+      url: `${API_URL}/api/users/${user._id}/activity/${activityId}`,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -118,6 +114,7 @@ function handleEditActivityPreload() {
       $(item).removeAttr('required');
     })
   }
+  $('#activity').focus();
 }
 function handleEditActivityView() {
   
@@ -127,12 +124,21 @@ function handleEditActivityView() {
 
   $('.lnkDelete').click( function() {
     event.preventDefault();
+    $('.divConfirm').addClass('showModal'); 
+  })
+
+  $('.btnConfirmYes').click( function() {
     removeActivity(activityId);
+  })
+  $('.btnConfirmNo').click( function() {
+    $('.divConfirm').removeClass('showModal');
   })
 
   $('#frmEditActivity').submit(function () {
     event.preventDefault();
-    
+    if (!validateActivityDate()){
+      return false;
+    };
     let revisedActivity = {
       activity: $('#activity').val(),
       activityDate: $('#activityDate').val(),

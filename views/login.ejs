@@ -37,10 +37,11 @@
         <h1 class="mainInnerBoxHeader">Login</h1>
         <form id="frmLogin">
           <fieldset>
-            <div class="errorDesc" hidden></div>
+            <div class="errorDesc" hidden aria-live="assertive"></div>
 
             <input id="username" value="" placeholder="Username" aria-label="Enter a Username" class="text-input" required />
-            <input id="password" type="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" required />
+            <input id="password" type="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" required
+            />
             <button class="btnLogin btnStandard">Login</button>
           </fieldset>
         </form>

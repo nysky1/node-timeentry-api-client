@@ -10,14 +10,14 @@ function addActivity(activity) {
     activityDate: activity.activityDate,
     activityDuration: activity.activityDuration
   };
-  //showLoader();
+
   $.when(getUser())
     .done(function (user) {
       const token = sessionStorage.getItem('token');
       request.id = user._id;
-      
+
       return $.ajax({
-        url: `${API_URL}/api/users/${user._id}/addActivity`,
+        url: `${API_URL}/api/users/${user._id}/activity`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -25,30 +25,21 @@ function addActivity(activity) {
         dataType: 'json',
         type: 'PUT'
       })
-      .done(function (result) {
-        window.location.href = "/activities";
-        dWrite('Saved activity');
-      })
-      .fail(function (result) {
-        hideLoader();
-        writeFlash(1, `Oops, adding the activity failed - ${result.statusText} (${result.status})!`);
-        dWrite(result.statusText);
-      });
+        .done(function (result) {
+          window.location.href = "/activities";
+          dWrite('Saved activity');
+        })
+        .fail(function (result) {
+          hideLoader();
+          writeFlash(1, `Oops, adding the activity failed - ${result.statusText} (${result.status})!`);
+          dWrite(result.statusText);
+        });
     })
     .fail(function (result) {
       hideLoader();
       writeFlash(1, `Oops, locating the user failed - ${result.statusText} (${result.status})!`);
       dWrite(result.statusText);
     });
-
-
-
-  // return $.ajax({
-  //   url: `${API_URL}/api/users/${userId}/addActivity`,
-  //   data: request,
-  //   dataType: 'json',
-  //   type: 'POST'
-  // });
 }
 /* END - API METHODS */
 function handleUserActivitiesView() {
@@ -60,18 +51,24 @@ function handleNewActivityPreload() {
       $(item).removeAttr('required');
     })
   }
+  $('#activity').focus();
 }
+
 function handleNewActivityView() {
   $('#activityDate').focus(function () {
-    $('#activityDate').attr('type','date');
+    $('#activityDate').attr('type', 'date');
   });
   $('#frmNewActivity').submit(function () {
     event.preventDefault();
+    if (!validateActivityDate()){
+      return false;
+    };
     let newActivity = {
       activity: $('#activity').val(),
       activityDate: $('#activityDate').val(),
       activityDuration: $('#activityDuration').val(),
     };
+
     addActivity(newActivity);
   })
 }

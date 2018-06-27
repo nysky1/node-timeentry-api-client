@@ -3,6 +3,7 @@
 blue - #2862b7
 lt blue - #2b71b1
 green - #00c57f
+lt green - #29CA91
 */
 html {
     height:100%;
@@ -133,12 +134,47 @@ a .fa {
 .lnkDelete {
     color:#DA5B59;
 }
+.divConfirm {
+    z-index:3;
+    visibility: hidden;
+    padding-top:100px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4)
+}
+.divConfirmContent { 
+    margin:auto;
+    background-color:#fff;
+    position:relative;
+    padding:15px;
+    outline:0;
+    width:60%;
+    text-align: center;
+    color: #2862b7; 
+}
+
+.divConfirm.showModal {
+    visibility: visible;
+}
+.divConfirmContent button {
+    width:25%;
+    padding:10px 15px;
+}
 .btnStandard {
     background: #00c57f;
-    border-color: #00c57f;
+    border:0;
     border-radius: 4px;
     color:white;
     text-align: center;
+}
+.btnStandard:hover {
+    cursor: pointer;
+    background: #29CA91;
 }
 .btnAdmin {
     background: #fff;
@@ -243,23 +279,6 @@ a .fa {
 
 }
 
-/* .js-panel-item:hover {
-    text-align: left;
-    padding: 10px 15px;
-    background: #2862b7;
-    color:white;
-    cursor: pointer;
-}
-.js-panel-item .editButton {
-    float:right;
-    position: relative;
-    right: 0;
-    top:50%;
-    display:none;
-}
-.js-panel-item:hover .editButton {
-    display:block;
-} */
 /* ALL USERS VIEW */
 
 /* END   - List View */
@@ -350,6 +369,9 @@ input::-webkit-inner-spin-button {
     }
     #frmQuickStart {
         width:100%;
+    }
+    .divConfirmContent {
+        width:90%;
     }
 }
 @media only screen and (max-width: 667px) and (orientation: landscape) {

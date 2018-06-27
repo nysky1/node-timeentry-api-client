@@ -29,7 +29,7 @@
         <h1 class="mainInnerBoxHeader">Create Your Account</h1>
         <form id="frmSignUp">
           <fieldset>
-            <div class="errorDesc" hidden></div>
+            <div class="errorDesc" hidden aria-live="assertive"></div>
             <div class="divFirstName">
               <input id="firstName" value="" placeholder="First Name" aria-label="Enter your First Name" class="text-input" required />
             </div>
@@ -40,7 +40,8 @@
             <input id="email" value="" placeholder="Email Address" aria-label="Enter your Email Address" class="text-input" required
             />
             <input id="username" value="" placeholder="Username" aria-label="Enter a Username" class="text-input" required />
-            <input id="password" type="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" required />
+            <input id="password" type="password" value="" placeholder="Password" aria-label="Enter a Password" class="text-input" required
+            />
             <button class="btnRegister btnStandard">Register</button>
           </fieldset>
         </form>

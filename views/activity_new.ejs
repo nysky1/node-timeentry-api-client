@@ -37,12 +37,14 @@
         <h1 class="mainInnerBoxHeader">Log an Activity</h1>
         <form id="frmNewActivity">
           <fieldset>
-            <div class="errorDesc" hidden></div>
-           
-            <textarea  id="activity" value="" placeholder="Describe Your Volunteer Activity" placeholder="Activity Description" aria-label="Enter an Activity" class="text-input" required
-            ></textarea>
-            <input id="activityDate" value="" placeholder="Date of Activity" aria-label="Enter an Activity Date" class="text-input" required />
-            <input id="activityDuration" type="number" step="0.25" value="" placeholder="Hours of Activity" aria-label="Enter the activity duration in hours" class="text-input" required />
+            <div class="errorDesc" hidden aria-live="assertive"></div>
+
+            <textarea id="activity" value="" placeholder="Describe Your Volunteer Activity" placeholder="Activity Description" aria-label="Enter an Activity"
+              class="text-input" required></textarea>
+            <input id="activityDate" value="" placeholder="Date of Activity (YYYY-MM-DD)" aria-label="Enter an Activity Date" class="text-input" required
+            />
+            <input id="activityDuration" type="number" step="0.25" value="" placeholder="Hours of Activity" aria-label="Enter the activity duration in hours"
+              class="text-input" required />
             <button class="btnSave btnStandard">Save</button>
           </fieldset>
         </form>
@@ -54,11 +56,11 @@
 
   </main>
   <div id="loader-wrapper">
-      <div id="loader"></div>
-      <div class="loader-section">
-        <img src="/images/ajax-loader.gif">
-      </div>
+    <div id="loader"></div>
+    <div class="loader-section">
+      <img src="/images/ajax-loader.gif">
     </div>
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script type="text/javascript" src="js/constants.js"></script>
